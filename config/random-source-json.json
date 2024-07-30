@@ -1,0 +1,12 @@
+{
+  "name": "random-source-json",
+  "config": {
+    "connector.class": "com.kafka.connect.etl.source.RandomSourceConnector",
+    "topic": "random-data-json",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "true",
+    "tasks.max": "2",
+    "poll.interval.ms": "${env:CONFIG_POLL_INTERVAL_MS}"
+  }
+}

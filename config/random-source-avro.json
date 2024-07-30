@@ -1,0 +1,10 @@
+{
+  "name": "random-source-avro",
+  "config": {
+    "connector.class": "com.kafka.connect.etl.source.RandomSourceConnector",
+    "topic": "random-data-avro",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "tasks.max": "2",
+    "poll.interval.ms": "${env:CONFIG_POLL_INTERVAL_MS}"
+  }
+}

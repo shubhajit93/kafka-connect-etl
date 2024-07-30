@@ -1,0 +1,20 @@
+{
+  "name": "log-sink-avro",
+  "config": {
+    "connector.class": "com.kafka.connect.etl.sink.LogSinkConnector",
+    "topics": "random-data-avro",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "tasks.max": "1",
+    "log.content": "value",
+    "log.level": "info",
+    "transforms": "UUIDField",
+    "transforms.UUIDField.type": "com.kafka.connect.etl.transforms.UUIDField$Value",
+    "transforms.UUIDField.field": "my-uuid",
+    "transforms.UUIDField.predicate": "EqualsField",
+    "predicates": "EqualsField",
+    "predicates.EqualsField.type": " com.kafka.connect.etl.predicates.EqualsField$Value",
+    "predicates.EqualsField.ignore.case": "true",
+    "predicates.EqualsField.expected.value": "task id: 0",
+    "predicates.EqualsField.field": "message"
+  }
+}
